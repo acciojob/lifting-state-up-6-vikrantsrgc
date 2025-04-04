@@ -9,16 +9,18 @@ function App() {
   ]);
 
   const handleComplete = (id) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: true } : todo
-      )
-    );
+      );
+      console.log(updatedTodos); // Debugging: Log the updated state
+      return updatedTodos;
+    });
   };
 
   return (
     <div>
-      <h1>Parent Component</h1>
+      <h1>Todo List</h1>
       <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
