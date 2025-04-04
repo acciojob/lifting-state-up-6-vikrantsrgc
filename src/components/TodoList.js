@@ -2,17 +2,14 @@ import React from 'react';
 
 function TodoList({ todos, handleComplete }) {
   return (
-    <ul className="space-y-2">
+    <ul>
       {todos.map((todo) => (
-        <li key={todo.id} className="flex justify-between items-center p-2 border rounded">
-          <span className={todo.completed ? 'line-through text-gray-400' : ''}>
-            {todo.text}
+        <li key={todo.id}>
+          <span>
+            {todo.completed ? <s>{todo.text}</s> : todo.text}
           </span>
           {!todo.completed && (
-            <button
-              onClick={() => handleComplete(todo.id)}
-              className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
-            >
+            <button onClick={() => handleComplete(todo.id)}>
               Complete
             </button>
           )}

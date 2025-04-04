@@ -17,8 +17,8 @@ function App() {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
-      <h1 className="text-xl font-semibold">Todo List</h1>
+    <div>
+      <h1>Todo List</h1>
       <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
